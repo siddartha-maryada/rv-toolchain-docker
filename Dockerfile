@@ -7,10 +7,11 @@ RUN addgroup riscv && useradd -m -g riscv -u ${UID} riscv
 ENV PATH /opt/riscv/bin:${PATH}
 
 RUN apt-get update
+RUN apt-get install -y ca-certificates
 RUN apt-get install -y git
-
-RUN git clone https://github.com/riscv/riscv-gnu-toolchain --recursive --depth 1 /riscv/
-
+# As we are unable to clone the repo inside a container, we will clone riscv-gnu-toolchain locally in this repo, manually.
+# RUN git clone https://github.com/riscv/riscv-gnu-toolchain --recursive --depth 1 /riscv/
+COPY ./riscv-gnu-toolchain ./riscv/
 RUN apt-get install -y \
     autoconf \
     automake \
