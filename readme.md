@@ -1,8 +1,8 @@
-# risc-v-toolchain-docker
+# riscv-toolchain-docker
 
 A straightforward dockerfile to get the risc-v toolchain built for all possible abi/arch configurations. Includes a script to generate a `bin` directory that can be added to your path, with a wrapper script for each of the gcc commands that calls into docker with the current working directory mapped.
 
-RISCV toolchain setup is not always trivial.  Thus packaged the RISCV toolchain into a docker image. Running make inside docker, opens this project up inside docker container, which has RISCV toolchain, and build the project. A good way to make sure, its reproducible.
+RISC-V toolchain setup is not always trivial.  Thus packaged the RISC-V toolchain into a docker image. Running make inside docker, opens this project up inside docker container, which has RISC-V toolchain, and build the project. A good way to make sure, its reproducible.
 
 ## How To Use
 
